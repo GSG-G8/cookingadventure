@@ -2,6 +2,10 @@ const addRecipeButton = document.querySelector('.header_addbtn');
 const addRecipeForm = document.querySelector('.form');
 const cancelRecipesButton = document.querySelector('.cancel-recpice');
 const recipesWrapper = document.querySelector('.main');
+const recipeName = document.getElementById('recipe');
+const recipeUrl = document.getElementById('recipe-url');
+const recipeDescriptionValue = document.getElementById('recipe-des');
+const submitRecipeBtn = document.querySelector('.submit-recipe');
 addRecipeButton.onclick = () => { addRecipeForm.style.display = 'flex'; };
 cancelRecipesButton.onclick = () => { addRecipeForm.style.display = 'none'; };
 
@@ -38,3 +42,16 @@ const showRecipes = (recipe) => {
 getData('/recipes').then((data) => data.json()).then((recipes) => {
   recipes.forEach((recipe) => showRecipes(recipe));
 }).catch(showErr);
+
+submitRecipeBtn.addEventListener('click', () => {
+  const data = {
+    recipe_name: recipeName.value,
+    img_src: recipeUrl.value,
+    description: recipeDescriptionValue.value,
+  };
+
+  postReq('/recipes', data)
+    .then((res) => res.json())
+    .then((res) => showRecipes(res))
+    .catch((err) => showErr(err));
+});
