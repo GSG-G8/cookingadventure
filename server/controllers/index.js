@@ -1,4 +1,5 @@
 const { getData } = require('../database/queries/getdata');
+const { postData } = require('../database/queries/postdata');
 
 const getRecipes = (req, res, next) => getData().then((data) => {
   res.json(data.rows);
@@ -6,4 +7,9 @@ const getRecipes = (req, res, next) => getData().then((data) => {
   next(err);
 });
 
-module.exports = { getRecipes };
+const addRecipes = (req, res, next) => postData(req.body).then((data) => {
+  res.json(data.rows[0]);
+}).catch((err) => {
+  next(err);
+});
+module.exports = { getRecipes, addRecipes };
