@@ -16,22 +16,22 @@ const showRecipes = (recipe) => {
   const recipesName = document.createElement('h2');
   const recipeImg = document.createElement('img');
   const recipeDescription = document.createElement('p');
-  const recipeDescriptionFormatter = document.createElement('pre');
+  const recipeDescriptionWrapper = document.createElement('div');
 
   recipesName.textContent = recipe.recipe_name;
   recipeImg.src = recipe.img_src;
   recipeImg.alt = recipesName;
   recipeDescription.textContent = recipe.description;
 
-  recipeDescriptionFormatter.appendChild(recipeDescription);
+  recipeDescriptionWrapper.appendChild(recipeDescription);
   recipeContainer.appendChild(recipeImg);
   recipeContainer.appendChild(recipesName);
-  recipeContainer.appendChild(recipeDescriptionFormatter);
+  recipeContainer.appendChild(recipeDescriptionWrapper);
   recipesWrapper.appendChild(recipeContainer);
 
   recipeContainer.setAttribute('class', 'recipe_container');
   recipeImg.setAttribute('class', 'recipe_img');
-  recipeDescriptionFormatter.setAttribute('class', 'recipe_description');
+  recipeDescriptionWrapper.setAttribute('class', 'recipe_description');
   recipesName.setAttribute('class', 'recipe_name');
 };
 

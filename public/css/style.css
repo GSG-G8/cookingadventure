@@ -85,6 +85,33 @@
     background: #68502E;
     color: #e9d9bd;
 }
+.main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.recipe_container{
+ display: flex;
+ flex-direction: column;
+ width: 32rem;
+ padding: 1rem;
+ border-radius: 3px;
+ border: #68502E 1px solid;
+ margin: 1rem 0;
+}
+.recipe_img{
+    width: 18rem;
+    height: 18rem;
+    margin: auto;
+}
+.recipe_name{
+    font-size: 2rem;
+}
+.recipe_description{
+overflow-wrap: break-word;
+}
 
 @media only screen and (max-width: 430px) {
     .header_search{
@@ -100,5 +127,8 @@
     }
     .header_addbtn{
         margin-top: 1rem;
+    }
+    .recipe_container{
+        width: 24rem;
     }
   }
