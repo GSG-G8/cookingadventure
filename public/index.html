@@ -8,15 +8,27 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Home Cooking Recipes</title>
   </head>
-  <body>
-    <header>
-      <img src="./img/logo2.png" />
-      <input type="text" placeholder="Search Recipes.." />
-      <button type="submit"><i class="fa fa-search"></i></button>
-      <button type="submit">Add</button>
+  <body class="wrapper">
+    <header class="header">
+      <div class="header_logo">
+        <img src="./img/logo2.png" alt="logo"/>
+      </div>
+      <div class="header_search">
+        <label for="search" class="header_search_label">Search for recipes</label>
+        <div class="header_search_wrapper">
+          <input
+            type="text"
+            placeholder="Search Recipes.."
+            id="search"
+            class="header_search_input"
+          />
+         <i class="fa fa-search header_search_btn"></i>
+        </div>
+        <button type="submit" class="header_addbtn">Add Recipe</button>
+      </div>
     </header>
     <main></main>
     <script src="./script//logic.js"></script>
