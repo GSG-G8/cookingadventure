@@ -49,7 +49,9 @@ submitRecipeBtn.addEventListener('click', () => {
     img_src: recipeUrl.value,
     description: recipeDescriptionValue.value,
   };
-
+  recipeName.value = '';
+  recipeUrl.value = '';
+  recipeDescriptionValue.value = '';
   postReq('/recipes', data)
     .then((res) => res.json())
     .then((res) => showRecipes(res))
