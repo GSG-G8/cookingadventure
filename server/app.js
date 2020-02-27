@@ -7,7 +7,7 @@ const router = require('./routes');
 
 const app = express();
 
-
+app.disable('x-powered-by');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(favicon(join(__dirname, '..', 'public', 'img', 'favicon.ico')));
