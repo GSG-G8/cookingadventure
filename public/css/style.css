@@ -60,7 +60,31 @@
     color: #e9d9bd;
 }
 
-
+.form{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.submit-recipe{
+    cursor: pointer;
+    height: 2.75rem;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 3px;
+    background: #68502E;
+    color: #e9d9bd;
+}
+.cancel-recpice{
+    cursor: pointer;
+    height: 2.75rem;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 3px;
+    background: #68502E;
+    color: #e9d9bd;
+}
 
 @media only screen and (max-width: 430px) {
     .header_search{

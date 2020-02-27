@@ -14,10 +14,12 @@
   <body class="wrapper">
     <header class="header">
       <div class="header_logo">
-        <img src="./img/logo2.png" alt="logo"/>
+        <img src="./img/logo2.png" alt="logo" />
       </div>
       <div class="header_search">
-        <label for="search" class="header_search_label">Search for recipes</label>
+        <label for="search" class="header_search_label"
+          >Search for recipes</label
+        >
         <div class="header_search_wrapper">
           <input
             type="text"
@@ -25,11 +27,28 @@
             id="search"
             class="header_search_input"
           />
-         <i class="fa fa-search header_search_btn"></i>
+          <i class="fa fa-search header_search_btn"></i>
         </div>
         <button type="submit" class="header_addbtn">Add Recipe</button>
       </div>
     </header>
+    <div class="form">
+      <label for="recipe">recipe name</label>
+      <input type="text" name="recipe" id="recipe" />
+      <label for="recipe-url">recipe img</label>
+      <input type="text" name="recipe-url" id="recipe-url" />
+      <label for="recipe-des">instructions</label>
+      <textarea
+        name="recipe-des"
+        id="recipe-des"
+        cols="30"
+        rows="10"
+      ></textarea>
+      <div>
+        <button type="submit" class="submit-recipe">Submit</button>
+        <button class="cancel-recpice">Cancel</button>
+      </div>
+    </div>
     <main></main>
     <script src="./script//logic.js"></script>
     <script src="./script/fetch.js"></script>
