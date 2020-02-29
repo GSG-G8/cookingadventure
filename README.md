@@ -13,7 +13,8 @@
   - header that contain a logo , search bar and two buttons .
   - main page which contain the Recipes .
   - A form to add a new Recipe on the app .
-
+  ## database schema 
+   ![Imgur](https://i.imgur.com/25JPYjH.png)
   ## How the process of building our project done?
   
   * We started with a suitable idea .
