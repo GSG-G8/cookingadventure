@@ -33,16 +33,17 @@
       </div>
     </header>
     <div class="form">
-      <label for="recipe">recipe name</label>
-      <input type="text" name="recipe" id="recipe" />
-      <label for="recipe-url">recipe img</label>
-      <input type="text" name="recipe-url" id="recipe-url" />
-      <label for="recipe-des">instructions</label>
+      <label for="recipe" class="form-label">recipe name</label>
+      <input type="text" name="recipe" id="recipe" class="form-input"/>
+      <label for="recipe-url" class="form-label">recipe img</label>
+      <input type="text" name="recipe-url" id="recipe-url" class="form-input"/>
+      <label for="recipe-des" class="form-label">instructions</label>
       <textarea
         name="recipe-des"
         id="recipe-des"
         cols="30"
         rows="10"
+        class="form-input"
       ></textarea>
       <div>
         <button type="submit" class="submit-recipe">Submit</button>
@@ -50,7 +51,6 @@
       </div>
     </div>
     <main class="main"></main>
-    <script src="./script//logic.js"></script>
     <script src="./script/fetch.js"></script>
     <script src="./script/dom.js"></script>
   </body>
