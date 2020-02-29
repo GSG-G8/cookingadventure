@@ -6,8 +6,13 @@ const recipeName = document.getElementById('recipe');
 const recipeUrl = document.getElementById('recipe-url');
 const recipeDescriptionValue = document.getElementById('recipe-des');
 const submitRecipeBtn = document.querySelector('.submit-recipe');
-addRecipeButton.onclick = () => { addRecipeForm.style.display = 'flex'; };
-cancelRecipesButton.onclick = () => { addRecipeForm.style.display = 'none'; };
+
+const cancelForm = () => {
+  recipeName.value = '';
+  recipeUrl.value = '';
+  recipeDescriptionValue.value = '';
+  addRecipeForm.style.display = 'none';
+};
 
 const showErr = () => {
   const errMessage = document.createElement('div');
@@ -31,7 +36,7 @@ const showRecipes = (recipe) => {
   recipeContainer.appendChild(recipeImg);
   recipeContainer.appendChild(recipesName);
   recipeContainer.appendChild(recipeDescriptionWrapper);
-  recipesWrapper.appendChild(recipeContainer);
+  recipesWrapper.prepend(recipeContainer);
 
   recipeContainer.setAttribute('class', 'recipe_container');
   recipeImg.setAttribute('class', 'recipe_img');
@@ -39,9 +44,9 @@ const showRecipes = (recipe) => {
   recipesName.setAttribute('class', 'recipe_name');
 };
 
-getData('/recipes').then((data) => data.json()).then((recipes) => {
-  recipes.forEach((recipe) => showRecipes(recipe));
-}).catch(showErr);
+
+addRecipeButton.onclick = () => { addRecipeForm.style.display = 'flex'; };
+cancelRecipesButton.onclick = () => cancelForm();
 
 submitRecipeBtn.addEventListener('click', () => {
   const data = {
@@ -49,11 +54,13 @@ submitRecipeBtn.addEventListener('click', () => {
     img_src: recipeUrl.value,
     description: recipeDescriptionValue.value,
   };
-  recipeName.value = '';
-  recipeUrl.value = '';
-  recipeDescriptionValue.value = '';
   postReq('/recipes', data)
     .then((res) => res.json())
     .then((res) => showRecipes(res))
     .catch((err) => showErr(err));
+  cancelForm();
 });
+
+getData('/recipes').then((data) => data.json()).then((recipes) => {
+  recipes.forEach((recipe) => showRecipes(recipe));
+}).catch(showErr);
